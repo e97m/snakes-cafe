@@ -6,13 +6,13 @@ meal = []
 
 
 def order():
-    '''Tis function doesn't take arguments and let the customer order from the menu'''
+    '''This function doesn't take arguments and lets the customer order from the menu'''
     item = input(' ').lower()
     # item = 'Wings'
     if item in menu:
         meal.append(item)
         meal_length = len(meal)
-        print(f'** order #{meal_length} : {item} have been added to your meal ** \n ')
+        print(f'** order #{meal_length} : {item} has been added to your meal ** \n ')
         order()
     elif  item == 'quit':
         final_order = {}
@@ -31,12 +31,12 @@ please choose from our menu!!
 
 
 def customized_order():
-    '''This function doesn't take arguments and let the customer order from the menu and outside it'''
+    '''This function doesn't take arguments and lets the customer order any thing weather its included in the menu or not'''
     item = input(' ').lower()
     if item in menu:
         meal.append(item)
         meal_length = len(meal)
-        print(f'** order #{meal_length} : {item} have been added to your meal ** \n')
+        print(f'** order #{meal_length} : {item} has been added to your meal ** \n')
         customized_order()
     elif  item == 'quit':
         final_order = {}
@@ -53,7 +53,7 @@ but dont worry, we will made it for you
 """)
         meal.append(item)
         meal_length = len(meal)
-        print(f'** order #{meal_length} : of {item} have been added to your meal ** \n')
+        print(f'** order #{meal_length} : {item} has been added to your meal ** \n')
         customized_order()
         
 
