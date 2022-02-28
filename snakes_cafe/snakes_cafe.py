@@ -1,8 +1,7 @@
 menu = ['Wings', 'Cookies', 'Spring Rolls', 'Salmon', 'Steak', 'Meat Tornado', 'A Literal Garden', 'Ice Cream', 'Cake', 'Pie', 'Coffee', 'Tea', 'Unicorn Tears']
 
-
+meal = []
 def order():
-    meal = []
     item = input(' ')
     # item = 'Wings'
     if item in menu:
@@ -13,14 +12,14 @@ def order():
     elif  item == 'quit':
         print(f'Your order is {meal}')
     else:
-        print("""This item is not in the menu, 
-        please choose from our menu!!""")
+        print("""
+This item is not in the menu, 
+please choose from our menu!!""")
         order()
 
 
 
 def customized_order():
-    meal = []
     item = input(' ')
     if item in menu:
         meal.append(item)
@@ -30,8 +29,9 @@ def customized_order():
     elif  item == 'quit':
         print(f'Your order is {meal}')
     else:
-        print("""This item is not in the menu, 
-        but dont worry, we will made it for you""")
+        print("""
+This item is not in the menu, 
+but dont worry, we will made it for you""")
         meal.append(item)
         meal_length = len(meal)
         print(f'** {meal_length} order of {item} have been added to your meal **')
@@ -71,28 +71,33 @@ Drinks
 Coffee
 Tea
 Unicorn Tears
-
-***********************************
-** What would you like to order? **
-***********************************
 """)
 
 
 
-# def customizability():
-#     is_custom = input('Do you want to strict with the menu? (y/n)')
-#     if is_custom == 'y':
-#         print('Please strict with the inculed items in the menu')
-#         customized_order()
-#     elif is_custom == 'n':
-#         print("""You can order items wether they are included in 
-#         the menu or not, we will try our best :) """)
-#         order()
-#     else:
-#         print('Please enter (y) or (n)')
-#         customizability()
+def customizability():
+    is_custom = input('Do you want to order something that is not on the menu? (y/n)')
+    if is_custom == 'n':
+        print("""
+Please strict with the inculed items in the menu
 
-# customizability()
+***********************************
+** What would you like to order? **
+***********************************
+        """)
+        order()
+    elif is_custom == 'y':
+        print("""
+You can order items wether they are included in 
+the menu or not, we will try our best :) 
 
-order()
+***********************************
+** What would you like to order? **
+***********************************
+        """)
+        customized_order()
+    else:
+        print('Please enter (y) or (n)')
+        customizability()
 
+customizability()
