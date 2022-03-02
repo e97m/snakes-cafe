@@ -7,7 +7,7 @@ meal = []
 
 def order():
     '''This function doesn't take arguments and lets the customer order from the menu'''
-    item = input(' ').lower()
+    item = input(' > ').lower()
     # item = 'Wings'
     if item in menu:
         meal.append(item)
@@ -21,10 +21,9 @@ def order():
                 final_order[i] = 1
             else:
                 final_order[i] +=1
-        print(f' \n Your order is {final_order} \n')
+        print(f' \n ***** Your order is {final_order} ***** \n')
     else:
-        print("""
-This item is not in the menu, 
+        print("""This item is not in the menu, 
 please choose from our menu!!
 """)
         order()
@@ -32,7 +31,7 @@ please choose from our menu!!
 
 def customized_order():
     '''This function doesn't take arguments and lets the customer order any thing weather its included in the menu or not'''
-    item = input(' ').lower()
+    item = input(' > ').lower()
     if item in menu:
         meal.append(item)
         meal_length = len(meal)
@@ -45,10 +44,9 @@ def customized_order():
                 final_order[i] = 1
             else:
                 final_order[i] +=1
-        print(f' \n Your order is {final_order} \n')
+        print(f' \n ***** Your order is {final_order} ***** \n')
     else:
-        print("""
-This item is not in the menu, 
+        print("""This item is not in the menu, 
 but dont worry, we will made it for you
 """)
         meal.append(item)
@@ -59,8 +57,8 @@ but dont worry, we will made it for you
 
 def customizability():
     '''This function doesn't take arguments and let the customer choose between running the order and custom order functions'''
-    is_custom = input('Do you want to order something that is not on the menu? (y/n)')
-    if is_custom == 'n':
+    is_custom = input('Do you want to order something that is not on the menu? (y/n) > ')
+    if is_custom == 'n' or is_custom == 'N':
         print("""
 Please strict with the inculed items in the menu
 
@@ -69,7 +67,7 @@ Please strict with the inculed items in the menu
 ***********************************
         """)
         order()
-    elif is_custom == 'y':
+    elif is_custom == 'y' or is_custom == 'Y':
         print("""
 You can order items wether they are included in 
 the menu or not, we will try our best :) 
