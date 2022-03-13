@@ -18,7 +18,7 @@ def order():
         final_order = {}
         for i in meal:
             if not i in final_order:
-                final_order[i] = 1
+                final_order[i] = 1  # you can use (counter) methon from (collections) library to creat the final order
             else:
                 final_order[i] +=1
         print(f' \n ***** Your order is {final_order} ***** \n')
@@ -38,7 +38,7 @@ def customized_order():
         print(f'** order #{meal_length} : {item} has been added to your meal ** \n')
         customized_order()
     elif  item == 'quit':
-        final_order = {}
+        final_order = {}   # you can use (counter) methon from (collections) library to creat the final order
         for i in meal:
             if not i in final_order:
                 final_order[i] = 1
